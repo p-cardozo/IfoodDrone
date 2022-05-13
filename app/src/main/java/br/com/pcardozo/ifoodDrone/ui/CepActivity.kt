@@ -1,9 +1,10 @@
-package br.com.pcardozo.ifoodDrone
+package br.com.pcardozo.ifoodDrone.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import br.com.pcardozo.ifoodDrone.R
 
-class MainActivity : AppCompatActivity() {
+class CepActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
