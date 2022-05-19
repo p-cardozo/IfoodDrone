@@ -10,15 +10,21 @@
         android:theme="@style/Theme.IfoodDrone">
         <activity
             android:name=".ui.StatusActivity"
+            android:parentActivityName=".ui.PaymentActivity"
+            android:label="status"
             android:exported="false" />
         <activity
             android:name=".ui.PaymentActivity"
+            android:parentActivityName=".ui.ProductsActivity"
+            android:label="pagamento"
             android:exported="false" />
         <activity
             android:name=".ui.CepActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ProductsActivity"
+            android:parentActivityName=".ui.CepActivity"
+            android:label="pedido"
             android:exported="false" />
         <activity
             android:name=".ui.SplashScreenActivity"
