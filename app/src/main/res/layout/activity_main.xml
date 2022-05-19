@@ -7,12 +7,13 @@
     tools:context=".ui.CepActivity">
 
     <EditText
+        android:background="@drawable/background_edittext"
         android:id="@+id/editText"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="48dp"
         android:layout_marginTop="56dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginEnd="86dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
         android:gravity="center"
         android:hint="CEP"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/cep_btn_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
