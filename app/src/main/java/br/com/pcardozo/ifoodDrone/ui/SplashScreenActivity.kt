@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pcardozo.ifoodDrone.R
+import br.com.pcardozo.ifoodDrone.ui.cep.CepActivity
 
 
 class SplashScreenActivity : AppCompatActivity() {
