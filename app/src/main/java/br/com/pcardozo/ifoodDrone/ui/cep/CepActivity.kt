@@ -12,7 +12,6 @@ import br.com.pcardozo.ifoodDrone.R
 import br.com.pcardozo.ifoodDrone.model.CepModel
 import br.com.pcardozo.ifoodDrone.ui.ProductsActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.text.Normalizer
 import kotlin.math.max
 import kotlin.math.min
 
@@ -28,15 +27,7 @@ class CepActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setupsEditTextCep()
         initViewStates()
-        goToProducts(removeCaracters())
-
-    }
-
-    private fun removeCaracters(): String {
-        val strNoAccent: String = Normalizer.normalize(edtCep.text.toString(), Normalizer.Form.NFD)
-        strNoAccent.replace("-".toRegex(), "")
-        strNoAccent.replace(".".toRegex(), "")
-        return strNoAccent
+        goToProducts()
     }
 
     private fun initViewStates() {
@@ -57,17 +48,19 @@ class CepActivity : AppCompatActivity() {
     }
 
     private fun buildError() {
-        Toast.makeText(this, "DEU BOSTA", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Digite um cep válido", Toast.LENGTH_LONG).show()
     }
 
     private fun getCep(cep: CepModel) {
-        val test = cep
         val intent = Intent(this, ProductsActivity::class.java)
         startActivity(intent)
     }
 
-    private fun goToProducts(cep: String) {
+    private fun goToProducts() {
         findViewById<Button>(R.id.cep_btn_search).setOnClickListener {
+            val cep = edtCep.text.toString()
+                .replace("[.]".toRegex(), "")
+                .replace("[-]".toRegex(), "")
             cepViewModel.interpret(CepInteractor.GetCep(cep))
         }
     }
@@ -142,7 +135,7 @@ class CepActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable) {
-                if (s.length == 9) {
+                if (s.length == 10) {
                     findViewById<Button>(R.id.cep_btn_search).isEnabled = true
                 }
             }
