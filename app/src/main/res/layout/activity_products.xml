@@ -17,6 +17,7 @@
         tools:listitem="@layout/item_product" />
 
     <Button
+        style="@style/Button"
         android:focusable="true"
         android:enabled="true"
         android:textSize="16sp"
