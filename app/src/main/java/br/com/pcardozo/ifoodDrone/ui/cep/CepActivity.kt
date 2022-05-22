@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pcardozo.ifoodDrone.R
 import br.com.pcardozo.ifoodDrone.model.CepModel
-import br.com.pcardozo.ifoodDrone.ui.ProductsActivity
+import br.com.pcardozo.ifoodDrone.ui.products.ProductsActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.max
 import kotlin.math.min
