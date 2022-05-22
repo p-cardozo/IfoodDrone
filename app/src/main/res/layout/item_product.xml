@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/item_products_img"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/coxinha"
@@ -14,28 +14,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/item_products_txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Coxinha"
         android:layout_marginStart="16dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/item_products_img"
+        app:layout_constraintTop_toTopOf="@+id/item_products_img" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/item_products_txt_store"
+        android:text="Barraca do Zé"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/item_products_txt_name"
+        app:layout_constraintTop_toBottomOf="@+id/item_products_txt_name" />
+
+    <TextView
+        android:id="@+id/item_products_txt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="R$ 12,00"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/item_products_txt_name"
+        app:layout_constraintTop_toBottomOf="@+id/item_products_txt_store" />
 
 
     <Button
         android:layout_marginEnd="16dp"
-        android:id="@+id/button"
+        android:id="@+id/item_products_btn_add"
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:textSize="16sp"
@@ -44,23 +53,23 @@
         android:layout_marginBottom="8dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView3" />
+        app:layout_constraintEnd_toStartOf="@+id/item_products_txt_amount" />
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/item_products_txt_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toStartOf="@+id/item_products_btn_remove"
+        app:layout_constraintTop_toBottomOf="@+id/item_products_txt_price" />
 
     <Button
         android:background="@drawable/cicle_button"
-        android:id="@+id/button1"
+        android:id="@+id/item_products_btn_remove"
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:textSize="16sp"

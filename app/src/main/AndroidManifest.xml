@@ -19,14 +19,14 @@
             android:exported="false" />
         <activity
             android:name=".ui.PaymentActivity"
-            android:parentActivityName=".ui.ProductsActivity"
+            android:parentActivityName=".ui.products.ProductsActivity"
             android:label="pagamento"
             android:exported="false" />
         <activity
             android:name=".ui.cep.CepActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ProductsActivity"
+            android:name=".ui.products.ProductsActivity"
             android:parentActivityName=".ui.cep.CepActivity"
             android:label="pedido"
             android:exported="false" />
