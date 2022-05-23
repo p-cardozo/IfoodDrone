@@ -4,5 +4,6 @@ class ProductsModel(
     val image: Int,
     val name: String,
     val store: String,
-    val price: Double
+    val price: Double,
+    var amount: Int
 )

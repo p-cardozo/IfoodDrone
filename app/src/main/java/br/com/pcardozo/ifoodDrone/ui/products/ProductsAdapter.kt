@@ -25,14 +25,14 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ProductsViewHolder(parent)
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
-        holder.bind(listProducts[position])
+        holder.bind(listProducts[position], position)
 
     override fun getItemCount(): Int = listProducts.size
 
     inner class ProductsViewHolder(parent: ViewGroup) :
         RecyclerView.ViewHolder(parent.inflate(VIEW_ID)) {
 
-        fun bind(productsModel: ProductsModel) = with(itemView) {
+        fun bind(productsModel: ProductsModel, position: Int) = with(itemView) {
             findViewById<ImageView>(R.id.item_products_img).setImageResource(productsModel.image)
 
             findViewById<TextView>(R.id.item_products_txt_name).text = productsModel.name
@@ -48,13 +48,19 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>
             findViewById<Button>(R.id.item_products_btn_add).setOnClickListener {
                 amount++
                 txtAmount.text = amount.toString()
+                productsModel.amount = amount
             }
 
             findViewById<Button>(R.id.item_products_btn_remove).setOnClickListener {
-                amount--
-                txtAmount.text = amount.toString()
+                if (amount > 0){
+                    amount--
+                    txtAmount.text = amount.toString()
+                    productsModel.amount = amount
+                }
+
             }
         }
+
 
     }
 }
