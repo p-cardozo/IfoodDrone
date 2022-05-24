@@ -25,14 +25,14 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ProductsViewHolder(parent)
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
-        holder.bind(listProducts[position], position)
+        holder.bind(listProducts[position])
 
     override fun getItemCount(): Int = listProducts.size
 
     inner class ProductsViewHolder(parent: ViewGroup) :
         RecyclerView.ViewHolder(parent.inflate(VIEW_ID)) {
 
-        fun bind(productsModel: ProductsModel, position: Int) = with(itemView) {
+        fun bind(productsModel: ProductsModel) = with(itemView) {
             findViewById<ImageView>(R.id.item_products_img).setImageResource(productsModel.image)
 
             findViewById<TextView>(R.id.item_products_txt_name).text = productsModel.name

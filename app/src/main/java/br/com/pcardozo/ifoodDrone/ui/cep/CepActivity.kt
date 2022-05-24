@@ -1,6 +1,7 @@
 package br.com.pcardozo.ifoodDrone.ui.cep
 
-import android.content.Intent
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,6 +16,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.max
 import kotlin.math.min
 
+private const val STREET = "STREET_KEY"
+
 
 class CepActivity : AppCompatActivity() {
 
@@ -28,6 +31,8 @@ class CepActivity : AppCompatActivity() {
         setupsEditTextCep()
         initViewStates()
         goToProducts()
+
+
     }
 
     private fun initViewStates() {
@@ -52,7 +57,9 @@ class CepActivity : AppCompatActivity() {
     }
 
     private fun getCep(cep: CepModel) {
-        val intent = Intent(this, ProductsActivity::class.java)
+        val pref: SharedPreferences = getSharedPreferences("PREF", MODE_PRIVATE)
+        pref.edit().putString(STREET, cep.endereco).apply()
+        val intent = ProductsActivity.newInstance(this)
         startActivity(intent)
     }
 

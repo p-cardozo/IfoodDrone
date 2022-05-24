@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/image_drone" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/status_txt_street"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -59,6 +59,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ProgressBar
+        android:progress="40"
+        android:background="@drawable/background_progressbar"
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
