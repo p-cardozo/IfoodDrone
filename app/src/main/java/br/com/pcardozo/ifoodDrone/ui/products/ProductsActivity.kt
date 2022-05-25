@@ -68,7 +68,7 @@ class ProductsActivity : AppCompatActivity() {
             ),
 
             ProductsModel(
-                R.drawable.image_drone,
+                R.drawable.bolo,
                 "Bolo",
                 "Sulani",
                 63.20,

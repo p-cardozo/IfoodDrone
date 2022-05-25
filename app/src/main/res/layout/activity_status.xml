@@ -60,6 +60,7 @@
 
     <ProgressBar
         android:progress="40"
+        android:progressTint="@color/primary"
         android:background="@drawable/background_progressbar"
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
